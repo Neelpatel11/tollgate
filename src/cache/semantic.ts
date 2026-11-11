@@ -178,11 +178,8 @@ export class RedisVectorStore implements VectorStore {
       'DIALECT',
       '2',
     )) as unknown[];
-    if (!Array.isArray(reply) || Number(reply[0]) < 1) return null;
-    const fields = reply[2] as string[] | undefined;
-    if (!fields) return null;
-    const map = new Map<string, string>();
-    for (let i = 0; i + 1 < fields.length; i += 2) map.set(String(fields[i]), String(fields[i + 1]));
+    const map = firstSearchResult(reply);
+    if (!map) return null;
     const dist = Number(map.get('dist'));
     const raw = map.get('entry');
     if (!raw || Number.isNaN(dist)) return null;
@@ -198,6 +195,30 @@ export class RedisVectorStore implements VectorStore {
       .expire(key, ttlSeconds)
       .exec();
   }
+}
+
+function pairsToMap(fields: unknown): Map<string, string> {
+  const map = new Map<string, string>();
+  if (!Array.isArray(fields)) return map;
+  for (let i = 0; i + 1 < fields.length; i += 2) map.set(String(fields[i]), String(fields[i + 1]));
+  return map;
+}
+
+export function firstSearchResult(reply: unknown): Map<string, string> | null {
+  if (!Array.isArray(reply) || reply.length === 0) return null;
+  if (typeof reply[0] === 'string') {
+    const top = new Map<string, unknown>();
+    for (let i = 0; i + 1 < reply.length; i += 2) top.set(String(reply[i]), reply[i + 1]);
+    const results = top.get('results');
+    if (!Array.isArray(results) || results.length === 0) return null;
+    const first = results[0];
+    if (!Array.isArray(first)) return null;
+    const entry = new Map<string, unknown>();
+    for (let i = 0; i + 1 < first.length; i += 2) entry.set(String(first[i]), first[i + 1]);
+    return pairsToMap(entry.get('extra_attributes'));
+  }
+  if (Number(reply[0]) < 1) return null;
+  return pairsToMap(reply[2]);
 }
 
 function toBuffer(vector: number[]): Buffer {
