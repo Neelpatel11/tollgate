@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { exactCacheAllowed, exactCacheKey } from '../src/cache/exact.js';
 import { MemoryKV } from '../src/cache/kv.js';
-import { LocalHashEmbedder, MemoryVectorStore, cosine, semanticScope } from '../src/cache/semantic.js';
+import { LocalHashEmbedder, MemoryVectorStore, cosine, firstSearchResult, semanticScope } from '../src/cache/semantic.js';
 import { parseConfig } from '../src/config.js';
 import { ProviderError } from '../src/errors.js';
 import { PriceBook } from '../src/pricing.js';
@@ -367,5 +367,24 @@ describe('Misc', () => {
     expect(new ProviderError('p', 401, 'x').failoverEligible).toBe(true);
     expect(new ProviderError('p', 401, 'x').retryable).toBe(false);
     expect(new ProviderError('p', 0, 'x', 'timeout').retryable).toBe(true);
+  });
+});
+
+describe('RediSearch reply parsing', () => {
+  it('reads the legacy array reply', () => {
+    const map = firstSearchResult([1, 'key', ['dist', '0.1', 'entry', '{}']]);
+    expect(map?.get('dist')).toBe('0.1');
+    expect(firstSearchResult([0])).toBeNull();
+  });
+
+  it('reads the map-style reply', () => {
+    const map = firstSearchResult([
+      'attributes', [], 'format', 'STRING',
+      'results', [['id', 'key', 'extra_attributes', ['dist', '0.2', 'entry', '{}'], 'values', []]],
+      'total_results', 1, 'warning', [],
+    ]);
+    expect(map?.get('dist')).toBe('0.2');
+    expect(map?.get('entry')).toBe('{}');
+    expect(firstSearchResult(['attributes', [], 'results', [], 'total_results', 0])).toBeNull();
   });
 });

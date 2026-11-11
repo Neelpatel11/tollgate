@@ -4,9 +4,9 @@
   "description": "OpenAI-compatible LLM gateway with routing, failover, caching, budgets and cost tracking",
   "main": "dist/src/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "node dist/src/index.js",
-    "build": "tsc -p tsconfig.build.json",
+    "dev": "node init && tsx watch src/index.ts",
+    "start": "node init && node dist/src/index.js",
+    "build": "node init && tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write .",

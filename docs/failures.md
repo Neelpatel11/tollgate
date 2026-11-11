@@ -27,6 +27,14 @@ Regression tests cover an alternating pass/fail provider (ejected), a 1% error r
 
 *Lesson:* a fault-tolerance feature can be invisible when it is broken, because the thing it protects keeps working. It needs a measurement of how much traffic reaches the unhealthy dependency, not just whether requests succeed. And in concurrent code, state machines need to distinguish results they asked for from results that merely arrive.
 
+### RediSearch reply shape differs by server version
+
+The Redis vector store parsed `FT.SEARCH` replies as the legacy array `[total, key, [field, value, ...]]`. The first run against `redis/redis-stack-server:7.4` returned a map-style reply (`attributes`, `format`, `results`, `total_results`, ...), so every lookup looked like a miss and the integration test failed while the in-memory store passed. Nothing errored; the cache would simply never have hit.
+
+*Fix:* the parser accepts both shapes, with a unit test for each. `FT.INFO` showed the document was indexed with zero indexing failures, which ruled out the index definition before the parser was suspected.
+
+*Lesson:* an in-memory implementation behind an interface proves the logic, not the wire format. The integration suite exists for exactly this.
+
 ## Performance
 
 ### `fetch` dominated gateway CPU
