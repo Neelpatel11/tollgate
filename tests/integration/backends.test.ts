@@ -77,6 +77,13 @@ describe.skipIf(!REDIS_URL)('redis', () => {
     const entry = { response: {} as never, costUsd: 0.01, provider: 'p', model: 'm', storedAt: Date.now() };
     await store.add(scope, await embedder.embed('how do i reset my password'), entry, 60);
     const hit = await store.search(scope, await embedder.embed('how do i reset my password'));
+    if (!hit) {
+      const idx = `tg:it:idx:dbg`;
+      const info = await redis.call('FT.INFO', (store as unknown as { index: string }).index);
+      const all = await redis.call('FT.SEARCH', (store as unknown as { index: string }).index, '*', 'LIMIT', '0', '3', 'RETURN', '1', 'scope');
+      const raw = await redis.call('FT.SEARCH', (store as unknown as { index: string }).index, `@scope:{${scope}}`, 'RETURN', '1', 'scope');
+      console.log('DBG', idx, JSON.stringify(info), JSON.stringify(all), JSON.stringify(raw), scope);
+    }
     expect(hit?.score).toBeGreaterThan(0.99);
     expect(await store.search('f'.repeat(32), await embedder.embed('how do i reset my password'))).toBeNull();
   });
