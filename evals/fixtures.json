@@ -1,0 +1,22 @@
+[
+  { "match": "capital of France", "answer": "Paris" },
+  { "match": "capital of Japan", "answer": "Tokyo" },
+  { "match": "17 \\+ 26", "answer": "43" },
+  { "match": "12 \\* 12", "answer": "144" },
+  { "match": "15% of 200", "answer": "30" },
+  { "match": "water boil", "answer": "100" },
+  { "match": "Red Planet", "answer": "Mars" },
+  { "match": "chemical formula of water", "answer": "H2O" },
+  { "match": "Sort these numbers", "answer": "2, 4, 7, 9" },
+  { "match": "Reverse the word", "answer": "yawetag" },
+  { "match": "INV-2041", "answer": "{\"invoice_no\": \"INV-2041\", \"total\": 1250.5}" },
+  { "match": "Asha lives in Pune", "answer": "{\"name\": \"Asha\", \"city\": \"Pune\"}" },
+  { "match": "7 March 2024", "answer": "{\"day\": 7, \"month\": 3, \"year\": 2024}" },
+  { "match": "delivery was fast", "answer": "positive" },
+  { "match": "product broke after one day", "answer": "negative" },
+  { "match": "Je voudrais un caf", "answer": "French" },
+  { "match": "Translate 'thank you'", "answer": "gracias" },
+  { "match": "Is 91 a prime", "answer": "no" },
+  { "match": "CEO's name", "answer": "NOT FOUND" },
+  { "match": "three primary colors", "answer": "Red\nYellow\nBlue" }
+]

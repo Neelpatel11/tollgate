@@ -1,0 +1,94 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis/redis-stack-server:7.4.0-v3
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 5s --health-timeout 3s --health-retries 10
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: tollgate
+          POSTGRES_PASSWORD: tollgate
+          POSTGRES_DB: tollgate
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U tollgate" --health-interval 5s --health-timeout 3s --health-retries 10
+      redpanda:
+        image: redpandadata/redpanda:v24.2.7
+        ports: ["9092:9092"]
+        options: >-
+          --health-cmd "rpk cluster health | grep -q 'Healthy:.*true'" --health-interval 10s --health-timeout 5s --health-retries 12
+    env:
+      IT_REDIS_URL: redis://localhost:6379
+      IT_DATABASE_URL: postgres://tollgate:tollgate@localhost:5432/tollgate
+      IT_KAFKA_BROKERS: localhost:9092
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run validate:config
+      - run: npm test
+
+  eval-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Golden set through the gateway with a flaky primary provider
+        run: npm run eval:ci
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-results
+          path: evals/results/
+
+  deploy-manifests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - name: Helm lint and template
+        run: |
+          helm lint deploy/helm/tollgate
+          helm template tollgate deploy/helm/tollgate > /dev/null
+      - uses: hashicorp/setup-terraform@v3
+      - name: Terraform validate
+        working-directory: deploy/terraform
+        run: |
+          terraform init -backend=false
+          terraform validate
+      - name: Compose config
+        run: docker compose -f deploy/docker-compose.yml config -q
+
+  image:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          tags: tollgate:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

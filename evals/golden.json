@@ -1,0 +1,22 @@
+[
+  { "id": "capital-france", "prompt": "What is the capital of France? Answer with one word.", "check": { "type": "contains", "value": "paris" } },
+  { "id": "capital-japan", "prompt": "What is the capital of Japan? Answer with one word.", "check": { "type": "contains", "value": "tokyo" } },
+  { "id": "arith-add", "prompt": "Compute 17 + 26. Reply with only the number.", "check": { "type": "regex", "value": "^\\s*43\\s*$" } },
+  { "id": "arith-mul", "prompt": "Compute 12 * 12. Reply with only the number.", "check": { "type": "regex", "value": "^\\s*144\\s*$" } },
+  { "id": "arith-pct", "prompt": "What is 15% of 200? Reply with only the number.", "check": { "type": "regex", "value": "^\\s*30(\\.0+)?\\s*$" } },
+  { "id": "boiling", "prompt": "At sea level, at what temperature in Celsius does water boil? Reply with only the number.", "check": { "type": "regex", "value": "^\\s*100\\s*$" } },
+  { "id": "planets", "prompt": "Which planet is known as the Red Planet? Answer with one word.", "check": { "type": "contains", "value": "mars" } },
+  { "id": "chem-water", "prompt": "What is the chemical formula of water? Reply with only the formula.", "check": { "type": "regex", "value": "^\\s*H2O\\s*$" } },
+  { "id": "sort-numbers", "prompt": "Sort these numbers ascending and reply with a comma-separated list only: 9, 2, 7, 4", "check": { "type": "regex", "value": "^\\s*2,\\s*4,\\s*7,\\s*9\\s*$" } },
+  { "id": "reverse-word", "prompt": "Reverse the word 'gateway'. Reply with only the reversed word.", "check": { "type": "contains", "value": "yawetag" } },
+  { "id": "extract-invoice", "prompt": "Extract JSON with keys invoice_no and total from: 'Invoice INV-2041, amount due 1250.50 INR'. Reply with JSON only.", "check": { "type": "json", "fields": { "invoice_no": "INV-2041", "total": 1250.5 } } },
+  { "id": "extract-person", "prompt": "Extract JSON with keys name and city from: 'Asha lives in Pune.' Reply with JSON only.", "check": { "type": "json", "fields": { "name": "Asha", "city": "Pune" } } },
+  { "id": "extract-date", "prompt": "Extract JSON with keys day, month and year (numbers) from: '7 March 2024'. Reply with JSON only.", "check": { "type": "json", "fields": { "day": 7, "month": 3, "year": 2024 } } },
+  { "id": "sentiment-pos", "prompt": "Classify the sentiment as positive or negative: 'The delivery was fast and the packaging was perfect.' Reply with one word.", "check": { "type": "contains", "value": "positive" } },
+  { "id": "sentiment-neg", "prompt": "Classify the sentiment as positive or negative: 'The product broke after one day and support ignored me.' Reply with one word.", "check": { "type": "contains", "value": "negative" } },
+  { "id": "language-fr", "prompt": "Which language is this sentence written in: 'Je voudrais un café, s'il vous plaît.' Reply with one word.", "check": { "type": "contains", "value": "french" } },
+  { "id": "translate-hi", "prompt": "Translate 'thank you' into Spanish. Reply with only the translation.", "check": { "type": "contains", "value": "gracias" } },
+  { "id": "yes-no", "prompt": "Is 91 a prime number? Reply with yes or no.", "check": { "type": "contains", "value": "no" } },
+  { "id": "refuse-unknown", "prompt": "Using only the text 'The meeting is on Tuesday.', what is the CEO's name? If it is not stated, reply exactly: NOT FOUND", "check": { "type": "contains", "value": "not found" } },
+  { "id": "format-bullets", "prompt": "List exactly three primary colors, one per line, no other text.", "check": { "type": "regex", "value": "^(?:[^\\n]+\\n){2}[^\\n]+\\s*$" } }
+]

@@ -1,0 +1,216 @@
+{
+  "alias": "golden",
+  "base_url": "http://127.0.0.1:55820",
+  "total": 20,
+  "passed": 20,
+  "score": 1,
+  "p50_ms": 52,
+  "p95_ms": 221,
+  "cost_usd": 0.000509,
+  "providers": {
+    "secondary": 17,
+    "primary": 3
+  },
+  "cases": [
+    {
+      "id": "capital-france",
+      "passed": true,
+      "latency_ms": 250.2520000000004,
+      "cost_usd": 0.000017,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "Paris"
+    },
+    {
+      "id": "capital-japan",
+      "passed": true,
+      "latency_ms": 220.58250000000044,
+      "cost_usd": 0.000017,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "Tokyo"
+    },
+    {
+      "id": "arith-add",
+      "passed": true,
+      "latency_ms": 176.89829999999984,
+      "cost_usd": 0.000013,
+      "provider": "primary",
+      "cache": "miss",
+      "status": 200,
+      "output": "43"
+    },
+    {
+      "id": "arith-mul",
+      "passed": true,
+      "latency_ms": 219.6260000000002,
+      "cost_usd": 0.000013,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "144"
+    },
+    {
+      "id": "arith-pct",
+      "passed": true,
+      "latency_ms": 75.09670000000006,
+      "cost_usd": 0.000014,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "30"
+    },
+    {
+      "id": "boiling",
+      "passed": true,
+      "latency_ms": 40.52599999999984,
+      "cost_usd": 0.000025,
+      "provider": "primary",
+      "cache": "miss",
+      "status": 200,
+      "output": "100"
+    },
+    {
+      "id": "planets",
+      "passed": true,
+      "latency_ms": 41.0618000000004,
+      "cost_usd": 0.000018,
+      "provider": "primary",
+      "cache": "miss",
+      "status": 200,
+      "output": "Mars"
+    },
+    {
+      "id": "chem-water",
+      "passed": true,
+      "latency_ms": 71.92799999999988,
+      "cost_usd": 0.000019,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "H2O"
+    },
+    {
+      "id": "sort-numbers",
+      "passed": true,
+      "latency_ms": 69.55180000000018,
+      "cost_usd": 0.000027,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "2, 4, 7, 9"
+    },
+    {
+      "id": "reverse-word",
+      "passed": true,
+      "latency_ms": 40.6295999999993,
+      "cost_usd": 0.00002,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "yawetag"
+    },
+    {
+      "id": "extract-invoice",
+      "passed": true,
+      "latency_ms": 41.35580000000027,
+      "cost_usd": 0.000051,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "{\"invoice_no\": \"INV-2041\", \"total\": 1250.5}"
+    },
+    {
+      "id": "extract-person",
+      "passed": true,
+      "latency_ms": 52.3755000000001,
+      "cost_usd": 0.000038,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "{\"name\": \"Asha\", \"city\": \"Pune\"}"
+    },
+    {
+      "id": "extract-date",
+      "passed": true,
+      "latency_ms": 52.8095000000003,
+      "cost_usd": 0.000042,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "{\"day\": 7, \"month\": 3, \"year\": 2024}"
+    },
+    {
+      "id": "sentiment-pos",
+      "passed": true,
+      "latency_ms": 53.980499999999665,
+      "cost_usd": 0.000035,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "positive"
+    },
+    {
+      "id": "sentiment-neg",
+      "passed": true,
+      "latency_ms": 48.3086000000003,
+      "cost_usd": 0.000036,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "negative"
+    },
+    {
+      "id": "language-fr",
+      "passed": true,
+      "latency_ms": 52.38410000000022,
+      "cost_usd": 0.00003,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "French"
+    },
+    {
+      "id": "translate-hi",
+      "passed": true,
+      "latency_ms": 49.42530000000079,
+      "cost_usd": 0.000021,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "gracias"
+    },
+    {
+      "id": "yes-no",
+      "passed": true,
+      "latency_ms": 49.67860000000019,
+      "cost_usd": 0.000013,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "no"
+    },
+    {
+      "id": "refuse-unknown",
+      "passed": true,
+      "latency_ms": 49.0635999999995,
+      "cost_usd": 0.000036,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "NOT FOUND"
+    },
+    {
+      "id": "format-bullets",
+      "passed": true,
+      "latency_ms": 28.692200000000412,
+      "cost_usd": 0.000024,
+      "provider": "secondary",
+      "cache": "miss",
+      "status": 200,
+      "output": "Red\nYellow\nBlue"
+    }
+  ]
+}

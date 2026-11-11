@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.git
+.env
+deploy
+loadtest/results
+evals/results
+tests
+docs
+*.md

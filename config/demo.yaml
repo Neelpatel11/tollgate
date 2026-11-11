@@ -1,0 +1,26 @@
+providers:
+  primary:
+    type: openai
+    baseUrl: http://127.0.0.1:9100/v1
+  backup:
+    type: openai
+    baseUrl: http://127.0.0.1:9101/v1
+
+aliases:
+  demo:
+    policy: fallback
+    chain:
+      - primary/mock
+      - backup/mock
+
+server:
+  requestTimeoutMs: 5000
+  maxRetries: 0
+
+circuitBreaker:
+  failureThreshold: 3
+  windowMs: 30000
+  openMs: 10000
+
+pricing:
+  file: config/prices.yaml

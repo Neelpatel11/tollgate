@@ -1,0 +1,676 @@
+{
+  "embedder": "local",
+  "pairs": 60,
+  "mean_same": 0.5811151523200058,
+  "mean_different": 0.7513960376764985,
+  "recommended": {
+    "threshold": 0.88,
+    "recall": 0,
+    "false_hit_rate": 0,
+    "precision": 1
+  },
+  "sweep": [
+    {
+      "threshold": 0.5,
+      "recall": 0.8,
+      "false_hit_rate": 0.9666666666666667,
+      "precision": 0.4528301886792453
+    },
+    {
+      "threshold": 0.51,
+      "recall": 0.8,
+      "false_hit_rate": 0.9666666666666667,
+      "precision": 0.4528301886792453
+    },
+    {
+      "threshold": 0.52,
+      "recall": 0.7,
+      "false_hit_rate": 0.9666666666666667,
+      "precision": 0.42
+    },
+    {
+      "threshold": 0.53,
+      "recall": 0.7,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.42857142857142855
+    },
+    {
+      "threshold": 0.54,
+      "recall": 0.7,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.42857142857142855
+    },
+    {
+      "threshold": 0.55,
+      "recall": 0.6333333333333333,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.40425531914893614
+    },
+    {
+      "threshold": 0.56,
+      "recall": 0.5666666666666667,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.37777777777777777
+    },
+    {
+      "threshold": 0.57,
+      "recall": 0.5333333333333333,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.36363636363636365
+    },
+    {
+      "threshold": 0.58,
+      "recall": 0.5,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.3488372093023256
+    },
+    {
+      "threshold": 0.59,
+      "recall": 0.43333333333333335,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.3170731707317073
+    },
+    {
+      "threshold": 0.6,
+      "recall": 0.43333333333333335,
+      "false_hit_rate": 0.9333333333333333,
+      "precision": 0.3170731707317073
+    },
+    {
+      "threshold": 0.61,
+      "recall": 0.43333333333333335,
+      "false_hit_rate": 0.9,
+      "precision": 0.325
+    },
+    {
+      "threshold": 0.62,
+      "recall": 0.4,
+      "false_hit_rate": 0.9,
+      "precision": 0.3076923076923077
+    },
+    {
+      "threshold": 0.63,
+      "recall": 0.4,
+      "false_hit_rate": 0.9,
+      "precision": 0.3076923076923077
+    },
+    {
+      "threshold": 0.64,
+      "recall": 0.4,
+      "false_hit_rate": 0.9,
+      "precision": 0.3076923076923077
+    },
+    {
+      "threshold": 0.65,
+      "recall": 0.4,
+      "false_hit_rate": 0.8666666666666667,
+      "precision": 0.3157894736842105
+    },
+    {
+      "threshold": 0.66,
+      "recall": 0.26666666666666666,
+      "false_hit_rate": 0.8666666666666667,
+      "precision": 0.23529411764705882
+    },
+    {
+      "threshold": 0.67,
+      "recall": 0.23333333333333334,
+      "false_hit_rate": 0.8666666666666667,
+      "precision": 0.21212121212121213
+    },
+    {
+      "threshold": 0.68,
+      "recall": 0.23333333333333334,
+      "false_hit_rate": 0.8666666666666667,
+      "precision": 0.21212121212121213
+    },
+    {
+      "threshold": 0.69,
+      "recall": 0.2,
+      "false_hit_rate": 0.8666666666666667,
+      "precision": 0.1875
+    },
+    {
+      "threshold": 0.7,
+      "recall": 0.16666666666666666,
+      "false_hit_rate": 0.8,
+      "precision": 0.1724137931034483
+    },
+    {
+      "threshold": 0.71,
+      "recall": 0.13333333333333333,
+      "false_hit_rate": 0.7333333333333333,
+      "precision": 0.15384615384615385
+    },
+    {
+      "threshold": 0.72,
+      "recall": 0.1,
+      "false_hit_rate": 0.7333333333333333,
+      "precision": 0.12
+    },
+    {
+      "threshold": 0.73,
+      "recall": 0.1,
+      "false_hit_rate": 0.7333333333333333,
+      "precision": 0.12
+    },
+    {
+      "threshold": 0.74,
+      "recall": 0.1,
+      "false_hit_rate": 0.7,
+      "precision": 0.125
+    },
+    {
+      "threshold": 0.75,
+      "recall": 0.1,
+      "false_hit_rate": 0.6666666666666666,
+      "precision": 0.13043478260869565
+    },
+    {
+      "threshold": 0.76,
+      "recall": 0.03333333333333333,
+      "false_hit_rate": 0.6333333333333333,
+      "precision": 0.05
+    },
+    {
+      "threshold": 0.77,
+      "recall": 0.03333333333333333,
+      "false_hit_rate": 0.6,
+      "precision": 0.05263157894736842
+    },
+    {
+      "threshold": 0.78,
+      "recall": 0.03333333333333333,
+      "false_hit_rate": 0.5333333333333333,
+      "precision": 0.058823529411764705
+    },
+    {
+      "threshold": 0.79,
+      "recall": 0.03333333333333333,
+      "false_hit_rate": 0.36666666666666664,
+      "precision": 0.08333333333333333
+    },
+    {
+      "threshold": 0.8,
+      "recall": 0,
+      "false_hit_rate": 0.3333333333333333,
+      "precision": 0
+    },
+    {
+      "threshold": 0.81,
+      "recall": 0,
+      "false_hit_rate": 0.26666666666666666,
+      "precision": 0
+    },
+    {
+      "threshold": 0.82,
+      "recall": 0,
+      "false_hit_rate": 0.26666666666666666,
+      "precision": 0
+    },
+    {
+      "threshold": 0.83,
+      "recall": 0,
+      "false_hit_rate": 0.26666666666666666,
+      "precision": 0
+    },
+    {
+      "threshold": 0.84,
+      "recall": 0,
+      "false_hit_rate": 0.23333333333333334,
+      "precision": 0
+    },
+    {
+      "threshold": 0.85,
+      "recall": 0,
+      "false_hit_rate": 0.2,
+      "precision": 0
+    },
+    {
+      "threshold": 0.86,
+      "recall": 0,
+      "false_hit_rate": 0.06666666666666667,
+      "precision": 0
+    },
+    {
+      "threshold": 0.87,
+      "recall": 0,
+      "false_hit_rate": 0.03333333333333333,
+      "precision": 0
+    },
+    {
+      "threshold": 0.88,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.89,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.9,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.91,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.92,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.93,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.94,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.95,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.96,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.97,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.98,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    },
+    {
+      "threshold": 0.99,
+      "recall": 0,
+      "false_hit_rate": 0,
+      "precision": 1
+    }
+  ],
+  "pair_scores": [
+    {
+      "a": "How do I reset my password?",
+      "b": "How can I reset my account password?",
+      "same": true,
+      "score": 0.653908403234643
+    },
+    {
+      "a": "What is the refund policy?",
+      "b": "what's your refund policy",
+      "same": true,
+      "score": 0.5494880966458322
+    },
+    {
+      "a": "How do I cancel my subscription?",
+      "b": "I want to cancel my subscription, how?",
+      "same": true,
+      "score": 0.6655558115324971
+    },
+    {
+      "a": "Where can I download my invoice?",
+      "b": "How do I download an invoice?",
+      "same": true,
+      "score": 0.47286705958190395
+    },
+    {
+      "a": "What payment methods do you accept?",
+      "b": "Which payment methods are accepted?",
+      "same": true,
+      "score": 0.4361810115272697
+    },
+    {
+      "a": "How long does shipping take?",
+      "b": "How long will shipping take?",
+      "same": true,
+      "score": 0.7523085546373134
+    },
+    {
+      "a": "Can I change my email address?",
+      "b": "How do I change the email address on my account?",
+      "same": true,
+      "score": 0.5199959912078782
+    },
+    {
+      "a": "Is there a free trial?",
+      "b": "Do you offer a free trial?",
+      "same": true,
+      "score": 0.5462546632778947
+    },
+    {
+      "a": "How do I contact support?",
+      "b": "How can I contact customer support?",
+      "same": true,
+      "score": 0.5864908945554319
+    },
+    {
+      "a": "What are your business hours?",
+      "b": "what are your opening hours",
+      "same": true,
+      "score": 0.71827419315379
+    },
+    {
+      "a": "How do I enable two-factor authentication?",
+      "b": "How can I turn on two factor authentication?",
+      "same": true,
+      "score": 0.5646642807446495
+    },
+    {
+      "a": "Do you support single sign-on?",
+      "b": "Is single sign-on supported?",
+      "same": true,
+      "score": 0.5779229101227189
+    },
+    {
+      "a": "How do I delete my account?",
+      "b": "How can I delete my account permanently?",
+      "same": true,
+      "score": 0.6591271939674168
+    },
+    {
+      "a": "Can I upgrade my plan later?",
+      "b": "Is it possible to upgrade my plan at a later time?",
+      "same": true,
+      "score": 0.5191378206812446
+    },
+    {
+      "a": "What is the capital of France?",
+      "b": "Tell me the capital of France.",
+      "same": true,
+      "score": 0.6573890316557013
+    },
+    {
+      "a": "Explain what a REST API is.",
+      "b": "What is a REST API? Please explain.",
+      "same": true,
+      "score": 0.759890820605318
+    },
+    {
+      "a": "How do I export my data to CSV?",
+      "b": "How can I export data as a CSV file?",
+      "same": true,
+      "score": 0.4599670437955266
+    },
+    {
+      "a": "Where is my order?",
+      "b": "Where's my order?",
+      "same": true,
+      "score": 0.6965020349209607
+    },
+    {
+      "a": "How do I add a team member?",
+      "b": "How can I add a new team member?",
+      "same": true,
+      "score": 0.6840910809845652
+    },
+    {
+      "a": "What is the difference between TCP and UDP?",
+      "b": "Explain the difference between TCP and UDP.",
+      "same": true,
+      "score": 0.7904930178365055
+    },
+    {
+      "a": "How do I update my billing address?",
+      "b": "How can I change my billing address?",
+      "same": true,
+      "score": 0.5859750034402619
+    },
+    {
+      "a": "Do you offer student discounts?",
+      "b": "Is there a discount for students?",
+      "same": true,
+      "score": 0.15323563481834054
+    },
+    {
+      "a": "How can I connect to the API?",
+      "b": "How do I connect to your API?",
+      "same": true,
+      "score": 0.5546743174933575
+    },
+    {
+      "a": "What does HTTP status 404 mean?",
+      "b": "What is the meaning of HTTP 404 status?",
+      "same": true,
+      "score": 0.3641863003506795
+    },
+    {
+      "a": "How do I rotate my API key?",
+      "b": "How can I rotate an API key?",
+      "same": true,
+      "score": 0.6545767747576673
+    },
+    {
+      "a": "Are my files encrypted at rest?",
+      "b": "Is my data encrypted at rest?",
+      "same": true,
+      "score": 0.6195425465931668
+    },
+    {
+      "a": "How do I invite a colleague to my workspace?",
+      "b": "How can I invite a colleague into my workspace?",
+      "same": true,
+      "score": 0.7096426477155019
+    },
+    {
+      "a": "What is the maximum file upload size?",
+      "b": "What's the max size for file uploads?",
+      "same": true,
+      "score": 0.4583421816725265
+    },
+    {
+      "a": "Can I use the service offline?",
+      "b": "Does the service work offline?",
+      "same": true,
+      "score": 0.5101045826744706
+    },
+    {
+      "a": "How do I check my usage this month?",
+      "b": "How can I see my usage for this month?",
+      "same": true,
+      "score": 0.5526646654151437
+    },
+    {
+      "a": "How do I reset my password?",
+      "b": "How do I change my password?",
+      "same": false,
+      "score": 0.7406031523899232
+    },
+    {
+      "a": "How do I cancel my subscription?",
+      "b": "How do I cancel my order?",
+      "same": false,
+      "score": 0.7754304758771351
+    },
+    {
+      "a": "What is the refund policy?",
+      "b": "What is the return policy?",
+      "same": false,
+      "score": 0.7335883529687874
+    },
+    {
+      "a": "How do I delete my account?",
+      "b": "How do I delete my message?",
+      "same": false,
+      "score": 0.7882117882117887
+    },
+    {
+      "a": "What is 15% of 200?",
+      "b": "What is 15% of 300?",
+      "same": false,
+      "score": 0.7905215661030471
+    },
+    {
+      "a": "What is the capital of France?",
+      "b": "What is the capital of Spain?",
+      "same": false,
+      "score": 0.7849494169832401
+    },
+    {
+      "a": "How long does shipping take to India?",
+      "b": "How long does shipping take to Canada?",
+      "same": false,
+      "score": 0.8313814157750322
+    },
+    {
+      "a": "Convert 100 USD to INR.",
+      "b": "Convert 100 INR to USD.",
+      "same": false,
+      "score": 0.7884402180300094
+    },
+    {
+      "a": "How do I enable two-factor authentication?",
+      "b": "How do I disable two-factor authentication?",
+      "same": false,
+      "score": 0.8479080263572303
+    },
+    {
+      "a": "Can I upgrade my plan?",
+      "b": "Can I downgrade my plan?",
+      "same": false,
+      "score": 0.7589576547231273
+    },
+    {
+      "a": "Where can I download my invoice?",
+      "b": "Where can I download the mobile app?",
+      "same": false,
+      "score": 0.6042087691608141
+    },
+    {
+      "a": "What is the maximum file upload size?",
+      "b": "What is the minimum password length?",
+      "same": false,
+      "score": 0.26681548623881957
+    },
+    {
+      "a": "How do I add a team member?",
+      "b": "How do I remove a team member?",
+      "same": false,
+      "score": 0.7823662888631856
+    },
+    {
+      "a": "Is the free trial 14 days?",
+      "b": "Is the free trial 30 days?",
+      "same": false,
+      "score": 0.7791412659991104
+    },
+    {
+      "a": "What is the difference between TCP and UDP?",
+      "b": "What is the difference between HTTP and HTTPS?",
+      "same": false,
+      "score": 0.6934681172185981
+    },
+    {
+      "a": "Do you support single sign-on with Okta?",
+      "b": "Do you support single sign-on with Google?",
+      "same": false,
+      "score": 0.8741468971167694
+    },
+    {
+      "a": "Write a Python function to sort a list.",
+      "b": "Write a Python function to reverse a list.",
+      "same": false,
+      "score": 0.8536461689425199
+    },
+    {
+      "a": "Summarize this article in one sentence.",
+      "b": "Summarize this article in five sentences.",
+      "same": false,
+      "score": 0.7034540859309185
+    },
+    {
+      "a": "How do I export my data to CSV?",
+      "b": "How do I import my data from CSV?",
+      "same": false,
+      "score": 0.6449876624076873
+    },
+    {
+      "a": "What happens if I miss a payment?",
+      "b": "What happens if I make a payment twice?",
+      "same": false,
+      "score": 0.7698908106887319
+    },
+    {
+      "a": "Translate 'good morning' into French.",
+      "b": "Translate 'good morning' into German.",
+      "same": false,
+      "score": 0.7800401127250888
+    },
+    {
+      "a": "What time does support open on Monday?",
+      "b": "What time does support open on Sunday?",
+      "same": false,
+      "score": 0.864269992663243
+    },
+    {
+      "a": "How do I rotate my API key?",
+      "b": "How do I revoke my API key?",
+      "same": false,
+      "score": 0.8037652720247482
+    },
+    {
+      "a": "Is my data encrypted at rest?",
+      "b": "Is my data encrypted in transit?",
+      "same": false,
+      "score": 0.6923937416876184
+    },
+    {
+      "a": "How many users are included in the Pro plan?",
+      "b": "How many users are included in the Team plan?",
+      "same": false,
+      "score": 0.8550542139047902
+    },
+    {
+      "a": "What is the price of the Pro plan?",
+      "b": "What is the price of the Enterprise plan?",
+      "same": false,
+      "score": 0.8535830134487147
+    },
+    {
+      "a": "How do I turn on dark mode?",
+      "b": "How do I turn off dark mode?",
+      "same": false,
+      "score": 0.801218732558912
+    },
+    {
+      "a": "Who founded the company?",
+      "b": "Who is the current CEO of the company?",
+      "same": false,
+      "score": 0.5244006957005892
+    },
+    {
+      "a": "What is the weather in Pune today?",
+      "b": "What is the weather in Pune tomorrow?",
+      "same": false,
+      "score": 0.85104153129899
+    },
+    {
+      "a": "Show orders placed in January.",
+      "b": "Show orders placed in February.",
+      "same": false,
+      "score": 0.7039962042957867
+    }
+  ]
+}

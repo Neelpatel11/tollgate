@@ -1,0 +1,6 @@
+apiVersion: v2
+name: tollgate
+description: OpenAI-compatible LLM gateway with routing, caching, budgets and cost tracking
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

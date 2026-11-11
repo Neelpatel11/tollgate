@@ -1,0 +1,65 @@
+providers:
+  mock:
+    type: openai
+    baseUrl: http://127.0.0.1:9100/v1
+  half:
+    type: openai
+    baseUrl: http://127.0.0.1:9101/v1
+  backup:
+    type: openai
+    baseUrl: http://127.0.0.1:9102/v1
+  down:
+    type: openai
+    baseUrl: http://127.0.0.1:9103/v1
+  hang:
+    type: openai
+    baseUrl: http://127.0.0.1:9104/v1
+
+aliases:
+  bench:
+    policy: fallback
+    chain: [mock/mock]
+    cache:
+      exact: off
+  cached:
+    policy: fallback
+    chain: [mock/mock]
+    cache:
+      exact: on
+  fo_half:
+    policy: fallback
+    chain: [half/mock, backup/mock]
+    cache:
+      exact: off
+  fo_down:
+    policy: fallback
+    chain: [down/mock, backup/mock]
+    cache:
+      exact: off
+  fo_hang:
+    policy: fallback
+    chain: [hang/mock, backup/mock]
+    cache:
+      exact: off
+
+server:
+  requestTimeoutMs: 1000
+  streamIdleMs: 1000
+  maxRetries: 0
+
+cache:
+  exact:
+    enabled: true
+    ttlSeconds: 3600
+    maxEntries: 100000
+
+rateLimit:
+  defaultRpm: 100000000
+
+circuitBreaker:
+  failureThreshold: 5
+  windowMs: 10000
+  openMs: 5000
+
+pricing:
+  file: config/prices.yaml

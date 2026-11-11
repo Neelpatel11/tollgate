@@ -1,0 +1,14 @@
+# USD per million tokens. Verify against each provider's pricing page before
+# relying on these numbers for billing. Add a new row with a later
+# effective_from when a price changes; older rows keep pricing historical usage.
+prices:
+  - { provider: openai, model: gpt-4o, input_per_mtok: 2.50, output_per_mtok: 10.00, cached_input_per_mtok: 1.25, effective_from: "2024-10-01" }
+  - { provider: openai, model: gpt-4o-mini, input_per_mtok: 0.15, output_per_mtok: 0.60, cached_input_per_mtok: 0.075, effective_from: "2024-07-18" }
+  - { provider: anthropic, model: claude-sonnet-4-5, input_per_mtok: 3.00, output_per_mtok: 15.00, cached_input_per_mtok: 0.30, effective_from: "2025-09-29" }
+  - { provider: anthropic, model: claude-haiku-4-5, input_per_mtok: 1.00, output_per_mtok: 5.00, cached_input_per_mtok: 0.10, effective_from: "2025-10-15" }
+  - { provider: google, model: gemini-2.5-pro, input_per_mtok: 1.25, output_per_mtok: 10.00, effective_from: "2025-06-17" }
+  - { provider: google, model: gemini-2.5-flash, input_per_mtok: 0.30, output_per_mtok: 2.50, effective_from: "2025-06-17" }
+  - { provider: local, model: qwen2.5, input_per_mtok: 0, output_per_mtok: 0 }
+  - { provider: mock, model: mock, input_per_mtok: 1.00, output_per_mtok: 2.00 }
+  - { provider: primary, model: mock, input_per_mtok: 1.00, output_per_mtok: 2.00 }
+  - { provider: backup, model: mock, input_per_mtok: 1.00, output_per_mtok: 2.00 }
